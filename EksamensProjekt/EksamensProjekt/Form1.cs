@@ -16,5 +16,13 @@ namespace EksamensProjekt
         {
             InitializeComponent();
         }
+
+        private void Button6_Click(object sender, EventArgs e)
+        {
+            groupBox1.Visible = true;
+            groupBox2.Visible = true;
+            button6.Visible = false;
+            button5.Visible = false;
+        }
     }
 }
