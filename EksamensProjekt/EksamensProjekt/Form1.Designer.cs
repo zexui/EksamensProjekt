@@ -34,6 +34,16 @@
             this.button8 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.PanelIngrediens = new System.Windows.Forms.Panel();
+            this.txtIngrediensMaengde = new System.Windows.Forms.TextBox();
+            this.cbnIngrediensEnhed = new System.Windows.Forms.ComboBox();
+            this.cbnIngredienser = new System.Windows.Forms.ComboBox();
+            this.lsbIngredienser = new System.Windows.Forms.ListBox();
+            this.btnIngredienseAdd = new System.Windows.Forms.Button();
+            this.lblMaengde = new System.Windows.Forms.Label();
+            this.lblIngrediens = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblBeskrivelse = new System.Windows.Forms.Label();
+            this.lblTitel = new System.Windows.Forms.Label();
             this.PanelResterAdd = new System.Windows.Forms.Panel();
             this.cbnMaengdeRest = new System.Windows.Forms.ComboBox();
             this.cbnRest = new System.Windows.Forms.ComboBox();
@@ -44,15 +54,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.cbnIngrediensEnhed = new System.Windows.Forms.ComboBox();
-            this.cbnIngredienser = new System.Windows.Forms.ComboBox();
-            this.lsbIngredienser = new System.Windows.Forms.ListBox();
-            this.btnIngredienseAdd = new System.Windows.Forms.Button();
-            this.lblMaengde = new System.Windows.Forms.Label();
-            this.lblIngrediens = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.lblBeskrivelse = new System.Windows.Forms.Label();
-            this.lblTitel = new System.Windows.Forms.Label();
             this.PanelOpskrifter = new System.Windows.Forms.Panel();
             this.rtxFremgangsmaede = new System.Windows.Forms.RichTextBox();
             this.lstOpskriftIngredienser = new System.Windows.Forms.ListBox();
@@ -64,7 +65,6 @@
             this.lstRester2 = new System.Windows.Forms.ListBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.txtIngrediensMaengde = new System.Windows.Forms.TextBox();
             this.PanelIngrediens.SuspendLayout();
             this.PanelResterAdd.SuspendLayout();
             this.PanelOpskrifter.SuspendLayout();
@@ -152,6 +152,97 @@
             this.PanelIngrediens.Name = "PanelIngrediens";
             this.PanelIngrediens.Size = new System.Drawing.Size(739, 647);
             this.PanelIngrediens.TabIndex = 9;
+            // 
+            // txtIngrediensMaengde
+            // 
+            this.txtIngrediensMaengde.Location = new System.Drawing.Point(107, 277);
+            this.txtIngrediensMaengde.Name = "txtIngrediensMaengde";
+            this.txtIngrediensMaengde.Size = new System.Drawing.Size(100, 23);
+            this.txtIngrediensMaengde.TabIndex = 12;
+            // 
+            // cbnIngrediensEnhed
+            // 
+            this.cbnIngrediensEnhed.FormattingEnabled = true;
+            this.cbnIngrediensEnhed.Location = new System.Drawing.Point(224, 277);
+            this.cbnIngrediensEnhed.Name = "cbnIngrediensEnhed";
+            this.cbnIngrediensEnhed.Size = new System.Drawing.Size(51, 23);
+            this.cbnIngrediensEnhed.TabIndex = 11;
+            // 
+            // cbnIngredienser
+            // 
+            this.cbnIngredienser.FormattingEnabled = true;
+            this.cbnIngredienser.Location = new System.Drawing.Point(113, 182);
+            this.cbnIngredienser.Name = "cbnIngredienser";
+            this.cbnIngredienser.Size = new System.Drawing.Size(235, 23);
+            this.cbnIngredienser.TabIndex = 10;
+            this.cbnIngredienser.TextUpdate += new System.EventHandler(this.cbnIngredienser_TextUpdate);
+            // 
+            // lsbIngredienser
+            // 
+            this.lsbIngredienser.FormattingEnabled = true;
+            this.lsbIngredienser.ItemHeight = 15;
+            this.lsbIngredienser.Location = new System.Drawing.Point(388, 175);
+            this.lsbIngredienser.Name = "lsbIngredienser";
+            this.lsbIngredienser.Size = new System.Drawing.Size(302, 469);
+            this.lsbIngredienser.TabIndex = 9;
+            // 
+            // btnIngredienseAdd
+            // 
+            this.btnIngredienseAdd.BackColor = System.Drawing.Color.Silver;
+            this.btnIngredienseAdd.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIngredienseAdd.Location = new System.Drawing.Point(13, 327);
+            this.btnIngredienseAdd.Name = "btnIngredienseAdd";
+            this.btnIngredienseAdd.Size = new System.Drawing.Size(229, 45);
+            this.btnIngredienseAdd.TabIndex = 7;
+            this.btnIngredienseAdd.Text = "Tilføj";
+            this.btnIngredienseAdd.UseVisualStyleBackColor = false;
+            // 
+            // lblMaengde
+            // 
+            this.lblMaengde.AutoSize = true;
+            this.lblMaengde.Location = new System.Drawing.Point(45, 280);
+            this.lblMaengde.Name = "lblMaengde";
+            this.lblMaengde.Size = new System.Drawing.Size(56, 15);
+            this.lblMaengde.TabIndex = 6;
+            this.lblMaengde.Text = "Mængde:";
+            // 
+            // lblIngrediens
+            // 
+            this.lblIngrediens.AutoSize = true;
+            this.lblIngrediens.Location = new System.Drawing.Point(16, 182);
+            this.lblIngrediens.Name = "lblIngrediens";
+            this.lblIngrediens.Size = new System.Drawing.Size(84, 15);
+            this.lblIngrediens.TabIndex = 4;
+            this.lblIngrediens.Text = "Ingrediens:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(16, 101);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(259, 15);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Bare indtast ingrediensen og mængden";
+            // 
+            // lblBeskrivelse
+            // 
+            this.lblBeskrivelse.AutoSize = true;
+            this.lblBeskrivelse.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBeskrivelse.Location = new System.Drawing.Point(15, 68);
+            this.lblBeskrivelse.Name = "lblBeskrivelse";
+            this.lblBeskrivelse.Size = new System.Drawing.Size(495, 19);
+            this.lblBeskrivelse.TabIndex = 2;
+            this.lblBeskrivelse.Text = "Her tilføjer du ingredienser som du har i din husstand";
+            // 
+            // lblTitel
+            // 
+            this.lblTitel.AutoSize = true;
+            this.lblTitel.Font = new System.Drawing.Font("Consolas", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitel.Location = new System.Drawing.Point(12, 18);
+            this.lblTitel.Name = "lblTitel";
+            this.lblTitel.Size = new System.Drawing.Size(195, 32);
+            this.lblTitel.TabIndex = 0;
+            this.lblTitel.Text = "Ingredienser";
             // 
             // PanelResterAdd
             // 
@@ -252,89 +343,6 @@
             this.label6.Size = new System.Drawing.Size(105, 32);
             this.label6.TabIndex = 0;
             this.label6.Text = "Rester";
-            // 
-            // cbnIngrediensEnhed
-            // 
-            this.cbnIngrediensEnhed.FormattingEnabled = true;
-            this.cbnIngrediensEnhed.Location = new System.Drawing.Point(224, 277);
-            this.cbnIngrediensEnhed.Name = "cbnIngrediensEnhed";
-            this.cbnIngrediensEnhed.Size = new System.Drawing.Size(51, 23);
-            this.cbnIngrediensEnhed.TabIndex = 11;
-            // 
-            // cbnIngredienser
-            // 
-            this.cbnIngredienser.FormattingEnabled = true;
-            this.cbnIngredienser.Location = new System.Drawing.Point(113, 182);
-            this.cbnIngredienser.Name = "cbnIngredienser";
-            this.cbnIngredienser.Size = new System.Drawing.Size(235, 23);
-            this.cbnIngredienser.TabIndex = 10;
-            // 
-            // lsbIngredienser
-            // 
-            this.lsbIngredienser.FormattingEnabled = true;
-            this.lsbIngredienser.ItemHeight = 15;
-            this.lsbIngredienser.Location = new System.Drawing.Point(388, 175);
-            this.lsbIngredienser.Name = "lsbIngredienser";
-            this.lsbIngredienser.Size = new System.Drawing.Size(302, 469);
-            this.lsbIngredienser.TabIndex = 9;
-            // 
-            // btnIngredienseAdd
-            // 
-            this.btnIngredienseAdd.BackColor = System.Drawing.Color.Silver;
-            this.btnIngredienseAdd.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnIngredienseAdd.Location = new System.Drawing.Point(13, 327);
-            this.btnIngredienseAdd.Name = "btnIngredienseAdd";
-            this.btnIngredienseAdd.Size = new System.Drawing.Size(229, 45);
-            this.btnIngredienseAdd.TabIndex = 7;
-            this.btnIngredienseAdd.Text = "Tilføj";
-            this.btnIngredienseAdd.UseVisualStyleBackColor = false;
-            // 
-            // lblMaengde
-            // 
-            this.lblMaengde.AutoSize = true;
-            this.lblMaengde.Location = new System.Drawing.Point(45, 280);
-            this.lblMaengde.Name = "lblMaengde";
-            this.lblMaengde.Size = new System.Drawing.Size(56, 15);
-            this.lblMaengde.TabIndex = 6;
-            this.lblMaengde.Text = "Mængde:";
-            // 
-            // lblIngrediens
-            // 
-            this.lblIngrediens.AutoSize = true;
-            this.lblIngrediens.Location = new System.Drawing.Point(16, 182);
-            this.lblIngrediens.Name = "lblIngrediens";
-            this.lblIngrediens.Size = new System.Drawing.Size(84, 15);
-            this.lblIngrediens.TabIndex = 4;
-            this.lblIngrediens.Text = "Ingrediens:";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(16, 101);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(259, 15);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Bare indtast ingrediensen og mængden";
-            // 
-            // lblBeskrivelse
-            // 
-            this.lblBeskrivelse.AutoSize = true;
-            this.lblBeskrivelse.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBeskrivelse.Location = new System.Drawing.Point(15, 68);
-            this.lblBeskrivelse.Name = "lblBeskrivelse";
-            this.lblBeskrivelse.Size = new System.Drawing.Size(495, 19);
-            this.lblBeskrivelse.TabIndex = 2;
-            this.lblBeskrivelse.Text = "Her tilføjer du ingredienser som du har i din husstand";
-            // 
-            // lblTitel
-            // 
-            this.lblTitel.AutoSize = true;
-            this.lblTitel.Font = new System.Drawing.Font("Consolas", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitel.Location = new System.Drawing.Point(12, 18);
-            this.lblTitel.Name = "lblTitel";
-            this.lblTitel.Size = new System.Drawing.Size(195, 32);
-            this.lblTitel.TabIndex = 0;
-            this.lblTitel.Text = "Ingredienser";
             // 
             // PanelOpskrifter
             // 
@@ -445,13 +453,6 @@
             this.label14.TabIndex = 0;
             this.label14.Text = "Rester";
             // 
-            // txtIngrediensMaengde
-            // 
-            this.txtIngrediensMaengde.Location = new System.Drawing.Point(107, 277);
-            this.txtIngrediensMaengde.Name = "txtIngrediensMaengde";
-            this.txtIngrediensMaengde.Size = new System.Drawing.Size(100, 23);
-            this.txtIngrediensMaengde.TabIndex = 12;
-            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -470,6 +471,7 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Home";
             this.Text = "Home";
+            this.Load += new System.EventHandler(this.Home_Load);
             this.PanelIngrediens.ResumeLayout(false);
             this.PanelIngrediens.PerformLayout();
             this.PanelResterAdd.ResumeLayout(false);
